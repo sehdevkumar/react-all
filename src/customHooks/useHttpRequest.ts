@@ -5,7 +5,7 @@ import { HttpResponse } from '../store/reducers/thunk-reducer'
 
 const useHttpReq = () => {
   //Required Hooks
-  const useDispatch = useAppDispatch()
+  const dispatch = useAppDispatch()
 
   // Init Request Methods
   function request(
@@ -23,7 +23,7 @@ const useHttpReq = () => {
 
     return new Promise((resolved)=> {
     
-        useDispatch(httpThunkReuqest(processedReq)).then(response=> {
+        dispatch(httpThunkReuqest(processedReq)).then(response=> {
             resolved(response.payload);
         })         
     })
